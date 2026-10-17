@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'theme/app_theme.dart';
 import 'screens/main_layout.dart';
+import 'screens/now_playing_screen.dart';
 import 'screens/splash_screen.dart';
 
 void main() {
@@ -31,6 +32,7 @@ class SpotifyCloneApp extends StatelessWidget {
       getPages: [
         GetPage(name: '/', page: () => const SplashScreen()),
         GetPage(name: '/home', page: () => const MainLayout()),
+        GetPage(name: '/player', page: () => const NowPlayingScreen()),
       ],
     );
   }

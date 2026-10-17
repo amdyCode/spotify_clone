@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/player_controller.dart';
+import '../screens/now_playing_screen.dart';
 import '../theme/app_theme.dart';
 
 class MiniPlayerWidget extends StatelessWidget {
@@ -22,11 +23,19 @@ class MiniPlayerWidget extends StatelessWidget {
       final currentMs = playerController.position.value.inMilliseconds;
       final progress = totalMs > 0 ? (currentMs / totalMs).clamp(0.0, 1.0) : 0.0;
 
-      return Container(
-        margin: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
-        decoration: BoxDecoration(
-          color: AppColors.miniPlayerBg,
-          borderRadius: BorderRadius.circular(8.0),
+      return GestureDetector(
+        onTap: () {
+          Get.to(
+            () => const NowPlayingScreen(),
+            transition: Transition.downToUp,
+            duration: const Duration(milliseconds: 300),
+          );
+        },
+        child: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+          decoration: BoxDecoration(
+            color: AppColors.miniPlayerBg,
+            borderRadius: BorderRadius.circular(8.0),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withValues(alpha: 0.5),
@@ -145,7 +154,8 @@ class MiniPlayerWidget extends StatelessWidget {
             const SizedBox(height: 4),
           ],
         ),
-      );
-    });
+      ),
+    );
+  });
   }
 }
