@@ -1,0 +1,84 @@
+{
+  "quickMix": {
+    "title": "Mix Ninho",
+    "subtitle": "Accédez à une session basée sur vos goûts",
+    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ab/c5/ea/abc5eab6-1a33-3910-6f96-3954d76c5815/190295460259.jpg/600x600bb.jpg"
+  },
+  "mixes": [
+    {
+      "id": "mix-damso",
+      "title": "Mix Damso",
+      "tag": "Mix Damso",
+      "tagColor": "#E91E63",
+      "subtitle": "Nekfeu, Ninho et PNL",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/5b/0f/59/5b0f597c-f337-93c1-445d-26b12160c8c6/16UMGIM34250.rgb.jpg/600x600bb.jpg",
+      "badge": "DAMSO.COM"
+    },
+    {
+      "id": "mix-soolking",
+      "title": "Mix Soolking",
+      "tag": "Mix Soolking",
+      "tagColor": "#CDDC39",
+      "subtitle": "Damso, Ninho et Gazo",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/29/e0/7f/29e07f75-649d-2b00-4758-70e44652dfde/25UMGIM12360.rgb.jpg/600x600bb.jpg",
+      "badge": "SOOLKING"
+    }
+  ],
+  "tracks": [
+    {
+      "id": "1828169323",
+      "title": "Tour du monde",
+      "artist": "Soolking, L2B",
+      "album": "Africa Jungle Part.1",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/29/e0/7f/29e07f75-649d-2b00-4758-70e44652dfde/25UMGIM12360.rgb.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/4b/22/a6/4b22a604-5b48-ae9e-ef64-3dab8659ecae/mzaf_4028718513972566756.plus.aac.p.m4a",
+      "durationMs": 171490,
+      "explicit": false,
+      "color": "#3E2723"
+    },
+    {
+      "id": "1485764830",
+      "title": "Musica (feat. Ninho)",
+      "artist": "Soprano, Ninho",
+      "album": "Du Phoenix aux étoiles...",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/38/72/43/3872430c-bb7d-f78d-5011-27f69616dee4/190295332181.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c7/d6/5d/c7d65d28-86b9-9853-0233-7649900f8825/mzaf_18040789006229736799.plus.aac.p.m4a",
+      "durationMs": 202760,
+      "explicit": false,
+      "color": "#1A237E"
+    },
+    {
+      "id": "1453399179",
+      "title": "Lettre à une femme",
+      "artist": "Ninho",
+      "album": "M.I.L.S 3",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ab/c5/ea/abc5eab6-1a33-3910-6f96-3954d76c5815/190295460259.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d9/c5/2e/d9c52e35-7efb-a758-3ed2-c89ae36a9998/mzaf_11505344214483300391.plus.aac.p.m4a",
+      "durationMs": 158000,
+      "explicit": true,
+      "color": "#212121"
+    },
+    {
+      "id": "1440878125",
+      "title": "Débrouillard",
+      "artist": "Damso",
+      "album": "Batterie faible",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/5b/0f/59/5b0f597c-f337-93c1-445d-26b12160c8c6/16UMGIM34250.rgb.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/44/16/0d/44160da4-88c4-9211-277d-4c3de4321040/mzaf_17243888964332251450.plus.aac.p.m4a",
+      "durationMs": 215000,
+      "explicit": true,
+      "color": "#2E7D32"
+    },
+    {
+      "id": "1439806289",
+      "title": "Djadja",
+      "artist": "Aya Nakamura",
+      "album": "NAKAMURA",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/03/bc/9a/03bc9ab3-61c0-dadd-5cb6-9b52b30af140/190295530631.jpg/600x600bb.jpg",
+      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/7b/f8/73/7bf87378-e84b-471a-3729-8d1d0546ee9a/mzaf_16949123873725847595.plus.aac.p.m4a",
+      "durationMs": 171133,
+      "explicit": false,
+      "color": "#880E4F"
+    }
+  ]
+}
