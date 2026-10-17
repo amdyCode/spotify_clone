@@ -36,7 +36,6 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 16.0,
               children: [
-                // 1. En-tête : Avatar profil "A" + Filtres en pilules ("Tout", "Musique", "Podcasts")
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                   child: Row(
@@ -87,7 +86,6 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
 
-                // 2. Bannière raccourci : "Mix Ninho"
                 if (quickMix != null)
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -135,7 +133,6 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
 
-                // 3. Section "Lancer la lecture" avec sous-titre
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Column(
@@ -163,14 +160,12 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
 
-                // Liste verticale des 5 titres
                 Column(
                   children: tracks.map((track) {
                     return TrackTileWidget(track: track);
                   }).toList(),
                 ),
 
-                // 4. Section "Pour commencer"
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.0),
                   child: Text(
@@ -184,7 +179,6 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
 
-                // Défilement horizontal des Mixes (Mix Damso, Mix Soolking)
                 SizedBox(
                   height: 220,
                   child: ListView.separated(
