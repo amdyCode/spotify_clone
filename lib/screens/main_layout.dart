@@ -5,6 +5,7 @@ import '../theme/app_theme.dart';
 import '../widgets/mini_player_widget.dart';
 import '../widgets/spotify_library_icon.dart';
 import 'home_screen.dart';
+import 'search_screen.dart';
 
 class MainLayoutController extends GetxController {
   final RxInt selectedIndex = 0.obs;
@@ -24,12 +25,7 @@ class MainLayout extends StatelessWidget {
 
     final screens = const [
       HomeScreen(),
-      Center(
-        child: Text(
-          'Rechercher',
-          style: TextStyle(color: Colors.white, fontSize: 18),
-        ),
-      ),
+      SearchScreen(),
       Center(
         child: Text(
           'Bibliothèque',

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'theme/app_theme.dart';
-import 'views/main_layout.dart';
-import 'views/splash_screen.dart';
+import 'screens/main_layout.dart';
+import 'screens/splash_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
