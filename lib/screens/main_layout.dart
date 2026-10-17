@@ -5,6 +5,7 @@ import '../theme/app_theme.dart';
 import '../widgets/mini_player_widget.dart';
 import '../widgets/spotify_library_icon.dart';
 import 'home_screen.dart';
+import 'library_screen.dart';
 import 'search_screen.dart';
 
 class MainLayoutController extends GetxController {
@@ -26,12 +27,7 @@ class MainLayout extends StatelessWidget {
     final screens = const [
       HomeScreen(),
       SearchScreen(),
-      Center(
-        child: Text(
-          'Bibliothèque',
-          style: TextStyle(color: Colors.white, fontSize: 18),
-        ),
-      ),
+      LibraryScreen(),
     ];
 
     return Scaffold(
