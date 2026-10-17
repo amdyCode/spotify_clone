@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:spotify_clone/utils/app_colors.dart';
 import '../controllers/search_controller.dart';
-import '../theme/app_theme.dart';
 import '../widgets/category_tile_widget.dart';
 import '../widgets/story_card_widget.dart';
 import '../widgets/track_tile_widget.dart';

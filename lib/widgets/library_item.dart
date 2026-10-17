@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:spotify_clone/theme/app_theme.dart';
+import 'package:spotify_clone/utils/app_colors.dart';
 
 class LibraryItem extends StatelessWidget {
   final String title;
