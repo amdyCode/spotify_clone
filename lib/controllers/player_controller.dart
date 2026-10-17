@@ -17,6 +17,8 @@ class PlayerController extends GetxController {
 
   final RxList<Track> currentQueue = <Track>[].obs;
   final RxInt currentQueueIndex = 0.obs;
+  final RxBool isShuffle = false.obs;
+  final RxBool isRepeat = false.obs;
 
   @override
   void onInit() {
@@ -29,8 +31,12 @@ class PlayerController extends GetxController {
     _player.playerStateStream.listen((state) {
       isPlaying.value = state.playing && state.processingState != ProcessingState.completed;
       if (state.processingState == ProcessingState.completed) {
-        position.value = Duration.zero;
-        playNext();
+        if (isRepeat.value && currentTrack.value != null) {
+          seek(Duration.zero).then((_) => _player.play());
+        } else {
+          position.value = Duration.zero;
+          playNext();
+        }
       }
     });
 
@@ -56,7 +62,7 @@ class PlayerController extends GetxController {
         final List<dynamic> decoded = json.decode(savedTracksJson);
         likedTracksList.assignAll(decoded.map((e) => Track.fromJson(e)).toList());
       } else {
-        // Initialiser avec les morceaux du catalogue si présents dans likedTrackIds
+        // Initialiser avec les morceaux du catalogue si présents
         try {
           final catalog = Get.find<CatalogController>();
           final matched = catalog.tracks.where((t) => likedTrackIds.contains(t.id)).toList();
@@ -158,6 +164,14 @@ class PlayerController extends GetxController {
   }
 
   bool isLiked(String trackId) => likedTrackIds.contains(trackId);
+
+  void toggleShuffle() {
+    isShuffle.value = !isShuffle.value;
+  }
+
+  void toggleRepeat() {
+    isRepeat.value = !isRepeat.value;
+  }
 
   @override
   void onClose() {
