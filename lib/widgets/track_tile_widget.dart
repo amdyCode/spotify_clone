@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/player_controller.dart';
 import '../models/track.dart';
-import '../theme/app_theme.dart';
+import 'package:spotify_clone/utils/app_colors.dart';
 
 class TrackTileWidget extends StatelessWidget {
   final Track track;

@@ -5,7 +5,7 @@ import 'package:spotify_clone/widgets/library_item.dart';
 import 'package:spotify_clone/widgets/liked_songs_title.dart';
 import '../controllers/catalog_controller.dart';
 import '../controllers/player_controller.dart';
-import '../theme/app_theme.dart';
+import 'package:spotify_clone/utils/app_colors.dart';
 
 class LibraryScreen extends StatelessWidget {
   const LibraryScreen({super.key});

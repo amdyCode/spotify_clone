@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:spotify_clone/controllers/player_controller.dart';
 import 'package:spotify_clone/models/track.dart';
-import 'package:spotify_clone/theme/app_theme.dart';
+import 'package:spotify_clone/utils/app_colors.dart';
 import 'package:spotify_clone/widgets/track_tile_widget.dart';
 
 class LikedSongsTitle extends StatelessWidget {

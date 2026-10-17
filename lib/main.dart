@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'theme/app_theme.dart';
+import 'package:spotify_clone/utils/app_colors.dart';
 import 'screens/main_layout.dart';
 import 'screens/now_playing_screen.dart';
 import 'screens/splash_screen.dart';

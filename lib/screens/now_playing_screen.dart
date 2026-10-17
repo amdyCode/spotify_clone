@@ -1,11 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:spotify_clone/utils/app_colors.dart';
 import 'package:spotify_clone/widgets/open_context_menu.dart';
 import 'package:spotify_clone/widgets/open_queue_modal.dart';
 import '../controllers/player_controller.dart';
 import '../models/track.dart';
-import '../theme/app_theme.dart';
 import '../utils/context_extensions.dart';
 
 class NowPlayingScreen extends StatelessWidget {

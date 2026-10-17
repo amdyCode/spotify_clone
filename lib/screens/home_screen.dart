@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/catalog_controller.dart';
 import '../controllers/player_controller.dart';
-import '../theme/app_theme.dart';
+import 'package:spotify_clone/utils/app_colors.dart';
 import '../widgets/mix_card_widget.dart';
 import '../widgets/track_tile_widget.dart';
 
