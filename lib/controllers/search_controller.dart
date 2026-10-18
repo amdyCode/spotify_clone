@@ -1,10 +1,9 @@
 import 'dart:async';
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:http/http.dart' as http;
 import '../models/search_category.dart';
 import '../models/track.dart';
+import '../services/deezer_service.dart';
 import 'catalog_controller.dart';
 
 class SearchScreenController extends GetxController {
@@ -116,41 +115,16 @@ class SearchScreenController extends GetxController {
       combinedResults.addAll(localMatches);
     } catch (_) {}
 
-    // 2. Recherche en direct sur l'API iTunes
     try {
-      final uri = Uri.parse(
-        'https://itunes.apple.com/search?term=${Uri.encodeComponent(searchTerm)}&country=FR&entity=song&limit=15'
-      );
-      final response = await http.get(uri).timeout(const Duration(seconds: 4));
-
-      if (response.statusCode == 200) {
-        final data = json.decode(response.body);
-        final List<dynamic> items = data['results'] ?? [];
-
-        for (final item in items) {
-          final id = item['trackId']?.toString() ?? '';
-          final preview = item['previewUrl'] as String?;
-          // On ne prend que les morceaux qui ont un extrait audio fonctionnel
-          if (preview != null && preview.isNotEmpty && !combinedResults.any((t) => t.id == id)) {
-            final artwork = (item['artworkUrl100'] as String? ?? '')
-                .replaceAll('100x100bb.jpg', '600x600bb.jpg');
-
-            combinedResults.add(Track(
-              id: id,
-              title: item['trackName'] ?? 'Titre inconnu',
-              artist: item['artistName'] ?? 'Artiste',
-              album: item['collectionName'] ?? '',
-              cover: artwork,
-              previewUrl: preview,
-              durationMs: item['trackTimeMillis'] ?? 30000,
-              explicit: item['trackExplicitness'] == 'explicit',
-            ));
-          }
+      final deezerMatches = await DeezerService.searchTracks(searchTerm);
+      for (final track in deezerMatches) {
+        if (!combinedResults.any((t) => t.id == track.id)) {
+          combinedResults.add(track);
         }
       }
     } catch (e) {
       // ignore: avoid_print
-      print('Erreur iTunes search: $e');
+      print('Erreur Deezer search: $e');
     } finally {
       searchResults.assignAll(combinedResults);
       isSearching.value = false;

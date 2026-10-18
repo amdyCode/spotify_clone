@@ -2,7 +2,7 @@
   "quickMix": {
     "title": "Mix Ninho",
     "subtitle": "Accédez à une session basée sur vos goûts",
-    "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ab/c5/ea/abc5eab6-1a33-3910-6f96-3954d76c5815/190295460259.jpg/600x600bb.jpg"
+    "cover": "https://cdn-images.dzcdn.net/images/cover/b351f0e935c9c3901f8d893b92ab952a/1000x1000-000000-80-0-0.jpg"
   },
   "mixes": [
     {
@@ -11,7 +11,7 @@
       "tag": "Mix Damso",
       "tagColor": "#E91E63",
       "subtitle": "Nekfeu, Ninho et PNL",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/5b/0f/59/5b0f597c-f337-93c1-445d-26b12160c8c6/16UMGIM34250.rgb.jpg/600x600bb.jpg",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/bd1be3997cb1ec7452c5e39c9ea0decf/1000x1000-000000-80-0-0.jpg",
       "badge": "DAMSO.COM"
     },
     {
@@ -20,65 +20,139 @@
       "tag": "Mix Soolking",
       "tagColor": "#CDDC39",
       "subtitle": "Damso, Ninho et Gazo",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/29/e0/7f/29e07f75-649d-2b00-4758-70e44652dfde/25UMGIM12360.rgb.jpg/600x600bb.jpg",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/fc7d93d8a150caf075c3857438596a99/1000x1000-000000-80-0-0.jpg",
       "badge": "SOOLKING"
+    }
+  ],
+  "artists": [
+    {
+      "id": "art-1",
+      "name": "Werenoi",
+      "picture": "https://cdn-images.dzcdn.net/images/artist/c9a941ffdfec123385b9e0b8b20f9ac0/500x500-000000-80-0-0.jpg"
+    },
+    {
+      "id": "art-2",
+      "name": "Ninho",
+      "picture": "https://cdn-images.dzcdn.net/images/artist/7601c5c0e2bd16cb585898316fd0dfec/500x500-000000-80-0-0.jpg"
+    },
+    {
+      "id": "art-3",
+      "name": "Dadju",
+      "picture": "https://cdn-images.dzcdn.net/images/artist/cc3b1efce691fc86644748dba8affa21/500x500-000000-80-0-0.jpg"
+    },
+    {
+      "id": "art-4",
+      "name": "Damso",
+      "picture": "https://cdn-images.dzcdn.net/images/artist/d5af0d088f62ebf29e849ef6b0afaa67/500x500-000000-80-0-0.jpg"
+    },
+    {
+      "id": "art-5",
+      "name": "Soolking",
+      "picture": "https://cdn-images.dzcdn.net/images/artist/83691771d4030c181c6bb7b2ecaf43cd/500x500-000000-80-0-0.jpg"
     }
   ],
   "tracks": [
     {
-      "id": "1828169323",
+      "id": "3469521671",
       "title": "Tour du monde",
       "artist": "Soolking, L2B",
-      "album": "Africa Jungle Part.1",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/29/e0/7f/29e07f75-649d-2b00-4758-70e44652dfde/25UMGIM12360.rgb.jpg/600x600bb.jpg",
-      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/4b/22/a6/4b22a604-5b48-ae9e-ef64-3dab8659ecae/mzaf_4028718513972566756.plus.aac.p.m4a",
-      "durationMs": 171490,
+      "album": "Tour du monde",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/fc7d93d8a150caf075c3857438596a99/1000x1000-000000-80-0-0.jpg",
+      "deezerId": 3469521671,
+      "previewUrl": "",
+      "durationMs": 171000,
       "explicit": false,
-      "color": "#3E2723"
+      "color": "#3E2723",
+      "quoteLyric": "Faut qu'on fasse le tour du monde, prends ma main et viens avec moi",
+      "lyrics": [
+        "Faut qu'on fasse le tour du monde",
+        "Prends ma main et viens avec moi",
+        "On s'en va loin de tout ce vacarme",
+        "Juste toi et moi sur les toits de Paname"
+      ]
     },
     {
-      "id": "1485764830",
+      "id": "797348632",
       "title": "Musica (feat. Ninho)",
       "artist": "Soprano, Ninho",
       "album": "Du Phoenix aux étoiles...",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/38/72/43/3872430c-bb7d-f78d-5011-27f69616dee4/190295332181.jpg/600x600bb.jpg",
-      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c7/d6/5d/c7d65d28-86b9-9853-0233-7649900f8825/mzaf_18040789006229736799.plus.aac.p.m4a",
-      "durationMs": 202760,
+      "cover": "https://cdn-images.dzcdn.net/images/cover/1fed9dc2695514d6d179facbc2ff3e39/1000x1000-000000-80-0-0.jpg",
+      "deezerId": 797348632,
+      "previewUrl": "",
+      "durationMs": 202000,
       "explicit": false,
-      "color": "#1A237E"
+      "color": "#1A237E",
+      "quoteLyric": "La musica me donne des ailes pour oublier les peines et le ciel",
+      "lyrics": [
+        "La musica me donne des ailes",
+        "Pour oublier les peines et le ciel",
+        "Chante avec moi, lève les mains",
+        "Demain sera un autre refrain"
+      ]
     },
     {
-      "id": "1453399179",
+      "id": "898651802",
       "title": "Lettre à une femme",
       "artist": "Ninho",
       "album": "M.I.L.S 3",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/ab/c5/ea/abc5eab6-1a33-3910-6f96-3954d76c5815/190295460259.jpg/600x600bb.jpg",
-      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d9/c5/2e/d9c52e35-7efb-a758-3ed2-c89ae36a9998/mzaf_11505344214483300391.plus.aac.p.m4a",
-      "durationMs": 158000,
+      "cover": "https://cdn-images.dzcdn.net/images/cover/b351f0e935c9c3901f8d893b92ab952a/1000x1000-000000-80-0-0.jpg",
+      "deezerId": 898651802,
+      "previewUrl": "",
+      "startOffsetSeconds": 85,
+      "durationMs": 157000,
       "explicit": true,
-      "color": "#212121"
+      "color": "#301216",
+      "quoteLyric": "Ne viens pas gâcher nos projets, j'ai pas qu'ça à faire de ma vie, compris (oui, oui)",
+      "lyrics": [
+        "À deux, c'est mieux qu'en solo, j'crois bien qu'j'ai trouvé ma go",
+        "Elle a ce truc en plus qui me rend parano",
+        "Ne viens pas gâcher nos projets, j'ai pas qu'ça à faire de ma vie, compris (oui, oui)",
+        "Et si c'est pour toujours, j'veux bien qu'on s'associe",
+        "Et si c'est pour toujours, j'veux bien qu'on s'associe",
+        "J'ai pas l'temps d'jouer la comédie",
+        "J'sais qu't'as peur que j'm'en aille, j'suis un homme de la street",
+        "Mais pour toi j'peux changer d'avis",
+        "Mais pour toi j'peux changer d'avis"
+      ]
     },
     {
-      "id": "1440878125",
+      "id": "366148451",
       "title": "Débrouillard",
       "artist": "Damso",
       "album": "Batterie faible",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/5b/0f/59/5b0f597c-f337-93c1-445d-26b12160c8c6/16UMGIM34250.rgb.jpg/600x600bb.jpg",
-      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/44/16/0d/44160da4-88c4-9211-277d-4c3de4321040/mzaf_17243888964332251450.plus.aac.p.m4a",
-      "durationMs": 215000,
+      "cover": "https://cdn-images.dzcdn.net/images/cover/bd1be3997cb1ec7452c5e39c9ea0decf/1000x1000-000000-80-0-0.jpg",
+      "deezerId": 366148451,
+      "previewUrl": "",
+      "durationMs": 245000,
       "explicit": true,
-      "color": "#2E7D32"
+      "color": "#1B3022",
+      "quoteLyric": "J'ai pas grandi dans l'or, j'ai dû me débrouiller, faire du son et prier",
+      "lyrics": [
+        "J'ai pas grandi dans l'or, j'ai dû me débrouiller",
+        "Faire du son et prier",
+        "J'vois la vie en noir et blanc",
+        "Mais j'avance en souriant"
+      ]
     },
     {
-      "id": "1439806289",
+      "id": "576851222",
       "title": "Djadja",
       "artist": "Aya Nakamura",
       "album": "NAKAMURA",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/03/bc/9a/03bc9ab3-61c0-dadd-5cb6-9b52b30af140/190295530631.jpg/600x600bb.jpg",
-      "previewUrl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/7b/f8/73/7bf87378-e84b-471a-3729-8d1d0546ee9a/mzaf_16949123873725847595.plus.aac.p.m4a",
-      "durationMs": 171133,
+      "cover": "https://cdn-images.dzcdn.net/images/cover/41fc3e7a3430f3a5e1c1780b57c3147f/1000x1000-000000-80-0-0.jpg",
+      "deezerId": 576851222,
+      "previewUrl": "",
+      "durationMs": 171000,
       "explicit": false,
-      "color": "#880E4F"
+      "color": "#5A1E32",
+      "quoteLyric": "Hello papi mais qué pasa? J'entends des bails sur moi, y a pas moyen Djadja",
+      "lyrics": [
+        "Hello papi mais qué pasa?",
+        "J'entends des bails sur moi",
+        "Y a pas moyen Djadja",
+        "J'suis pas ta catin Djadja",
+        "Genre en catchana baby tu dead ça"
+      ]
     }
   ]
 }

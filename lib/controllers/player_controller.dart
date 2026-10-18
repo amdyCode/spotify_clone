@@ -1,8 +1,10 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/track.dart';
+import '../services/deezer_service.dart';
 import 'catalog_controller.dart';
 
 class PlayerController extends GetxController {
@@ -82,7 +84,7 @@ class PlayerController extends GetxController {
       final jsonList = likedTracksList.map((t) => t.toJson()).toList();
       await prefs.setString('liked_tracks_data', json.encode(jsonList));
     } catch (e) {
-      print('Erreur sauvegarde favoris: $e');
+      debugPrint('Erreur sauvegarde favoris: $e');
     }
   }
 
@@ -98,10 +100,19 @@ class PlayerController extends GetxController {
       }
 
       currentTrack.value = track;
-      await _player.setUrl(track.previewUrl);
+      String audioUrl = track.previewUrl;
+
+      if (track.deezerId != null) {
+        final deezerUrl = await DeezerService.getPreview(track.deezerId!);
+        if (deezerUrl != null && deezerUrl.isNotEmpty) {
+          audioUrl = deezerUrl;
+        }
+      }
+
+      await _player.setUrl(audioUrl);
       await _player.play();
     } catch (e) {
-      print('Erreur lecture track: $e');
+      debugPrint('Erreur lecture track: $e');
     }
   }
 

@@ -8,6 +8,10 @@ class Track {
   final int durationMs;
   final bool explicit;
   final String color;
+  final int? deezerId;
+  final String? quoteLyric;
+  final List<String> lyrics;
+  final int startOffsetSeconds;
 
   const Track({
     required this.id,
@@ -19,6 +23,10 @@ class Track {
     required this.durationMs,
     this.explicit = false,
     this.color = '#121212',
+    this.deezerId,
+    this.quoteLyric,
+    this.lyrics = const [],
+    this.startOffsetSeconds = 0,
   });
 
   factory Track.fromJson(Map<String, dynamic> json) {
@@ -32,6 +40,10 @@ class Track {
       durationMs: json['durationMs'] as int? ?? 0,
       explicit: json['explicit'] as bool? ?? false,
       color: json['color'] as String? ?? '#121212',
+      deezerId: json['deezerId'] as int?,
+      quoteLyric: json['quoteLyric'] as String?,
+      lyrics: (json['lyrics'] as List<dynamic>?)?.map((e) => e.toString()).toList() ?? const [],
+      startOffsetSeconds: json['startOffsetSeconds'] as int? ?? 0,
     );
   }
 
@@ -46,6 +58,10 @@ class Track {
       'durationMs': durationMs,
       'explicit': explicit,
       'color': color,
+      'deezerId': deezerId,
+      'quoteLyric': quoteLyric,
+      'lyrics': lyrics,
+      'startOffsetSeconds': startOffsetSeconds,
     };
   }
 }

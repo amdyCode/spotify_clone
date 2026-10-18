@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../controllers/catalog_controller.dart';
 import '../controllers/player_controller.dart';
 import 'package:spotify_clone/utils/app_colors.dart';
+import '../widgets/artist_avatar_widget.dart';
 import '../widgets/mix_card_widget.dart';
 import '../widgets/track_tile_widget.dart';
 
@@ -29,6 +30,7 @@ class HomeScreen extends StatelessWidget {
           final quickMix = catalog.quickMix.value;
           final tracks = catalog.tracks;
           final mixes = catalog.mixes;
+          final artists = catalog.artists;
 
           return SingleChildScrollView(
             padding: const EdgeInsets.only(bottom: 120.0),
@@ -210,6 +212,46 @@ class HomeScreen extends StatelessWidget {
                     },
                   ),
                 ),
+
+                // 5. Section "Popular artists" (conforme à la capture de l'utilisateur)
+                if (artists.isNotEmpty) ...[
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 16.0),
+                    child: Text(
+                      'Popular artists',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: -0.5,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 185,
+                    child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      itemCount: artists.length,
+                      separatorBuilder: (_, _) => const SizedBox(width: 16),
+                      itemBuilder: (context, index) {
+                        final artist = artists[index];
+                        return ArtistAvatarWidget(
+                          artist: artist,
+                          onTap: () {
+                            if (tracks.isNotEmpty) {
+                              final matched = tracks.firstWhere(
+                                (t) => t.artist.toLowerCase().contains(artist.name.toLowerCase()),
+                                orElse: () => tracks.first,
+                              );
+                              player.playTrack(matched);
+                            }
+                          },
+                        );
+                      },
+                    ),
+                  ),
+                ],
               ],
             ),
           );
