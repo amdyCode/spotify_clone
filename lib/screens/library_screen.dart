@@ -34,7 +34,7 @@ class LibraryScreen extends StatelessWidget {
                       width: 34,
                       height: 34,
                       decoration: const BoxDecoration(
-                        color: Color(0xFF8D4A32),
+                        color: AppColors.spotifyGreen,
                         shape: BoxShape.circle,
                       ),
                       alignment: Alignment.center,
@@ -145,7 +145,6 @@ class LibraryScreen extends StatelessWidget {
               ),
             ),
 
-            // Liste des éléments de la bibliothèque
             SliverToBoxAdapter(
               child: Obx(() {
                 final filter = libraryController.selectedFilter.value;
@@ -179,7 +178,6 @@ class LibraryScreen extends StatelessWidget {
                           );
                         }),
 
-                      // Artistes
                       if (filter.isEmpty || filter == 'Artistes')
                         ...tracks.map((t) {
                           return LibraryItem(

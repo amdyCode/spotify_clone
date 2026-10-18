@@ -42,18 +42,7 @@ class MainLayout extends StatelessWidget {
             right: 0,
             bottom: 0,
             child: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Colors.transparent,
-                    AppColors.background.withValues(alpha: 0.85),
-                    AppColors.background,
-                  ],
-                  stops: const [0.0, 0.4, 0.8],
-                ),
-              ),
+              color: AppColors.background,
               child: SafeArea(
                 top: false,
                 child: Column(
