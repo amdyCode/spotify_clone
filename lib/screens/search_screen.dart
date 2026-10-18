@@ -19,14 +19,12 @@ class SearchScreen extends StatelessWidget {
         bottom: false,
         child: CustomScrollView(
           slivers: [
-            // 1. En-tête : Avatar "A", Titre "Rechercher", Icône Caméra
             SliverToBoxAdapter(
               child: Padding(
                 padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 12.0, bottom: 8.0),
                 child: Row(
                   spacing: 12.0,
                   children: [
-                    // Avatar "A"
                     Container(
                       width: 34,
                       height: 34,
@@ -75,7 +73,6 @@ class SearchScreen extends StatelessWidget {
               ),
             ),
 
-            // 2. Barre de recherche épinglée / Stylisée
             SliverToBoxAdapter(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
@@ -127,7 +124,6 @@ class SearchScreen extends StatelessWidget {
               ),
             ),
 
-            // 3. Contenu : Résultats de recherche OU Découverte & Parcourir tout
             SliverToBoxAdapter(
               child: Obx(() {
                 final isQuerying = searchController.query.value.trim().isNotEmpty;
@@ -166,7 +162,6 @@ class SearchScreen extends StatelessWidget {
                   );
                 }
 
-                // Vue standard conforme à la Capture 3
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 120.0),
                   child: Column(
@@ -187,7 +182,6 @@ class SearchScreen extends StatelessWidget {
                         ),
                       ),
 
-                      // Liste horizontale des Stories
                       SizedBox(
                         height: 215,
                         child: ListView.separated(
@@ -222,7 +216,6 @@ class SearchScreen extends StatelessWidget {
                         ),
                       ),
 
-                      // Grille 2 colonnes des catégories
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16.0),
                         child: GridView.builder(

@@ -49,16 +49,12 @@ class NowPlayingScreen extends StatelessWidget {
       final isLiked = player.isLiked(track.id);
       final isShuffle = player.isShuffle.value;
 
-      final currentMs = player.position.value.inMilliseconds.toDouble();
-      final totalMs = player.duration.value.inMilliseconds.toDouble();
-      final maxVal = totalMs > 0 ? totalMs : 30000.0;
-      final clampedCurrent = currentMs.clamp(0.0, maxVal);
-
-      final offsetSec = track.startOffsetSeconds;
-      final realCurrentSec = offsetSec + player.position.value.inSeconds;
-      final realTotalSec = track.durationMs > 0
-          ? (track.durationMs / 1000).round()
-          : (offsetSec + (totalMs / 1000).round());
+      // Affichage basé uniquement sur les 30 secondes de l'extrait
+      const previewDurationSec = 30;
+      const previewTotalMs = 30000.0;
+      final currentMs = player.position.value.inMilliseconds.toDouble().clamp(0.0, previewTotalMs);
+      final currentSeconds = (currentMs / 1000).floor().clamp(0, previewDurationSec);
+      final remainingSeconds = (previewDurationSec - currentSeconds).clamp(0, previewDurationSec);
 
       final dominantColor = _parseTrackColor(track.color);
 
@@ -286,9 +282,9 @@ class NowPlayingScreen extends StatelessWidget {
                               overlayColor: Colors.white.withValues(alpha: 0.15),
                             ),
                             child: Slider(
-                              value: clampedCurrent,
+                              value: currentMs,
                               min: 0.0,
-                              max: maxVal,
+                              max: previewTotalMs,
                               onChanged: (val) {
                                 player.seek(Duration(milliseconds: val.toInt()));
                               },
@@ -300,7 +296,7 @@ class NowPlayingScreen extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  _formatDuration(Duration(seconds: realCurrentSec)),
+                                  _formatDuration(Duration(seconds: currentSeconds)),
                                   style: const TextStyle(
                                     color: Colors.white70,
                                     fontSize: 12,
@@ -308,7 +304,7 @@ class NowPlayingScreen extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  _formatDuration(Duration(seconds: realTotalSec)),
+                                  '-${_formatDuration(Duration(seconds: remainingSeconds))}',
                                   style: const TextStyle(
                                     color: Colors.white70,
                                     fontSize: 12,
@@ -328,7 +324,6 @@ class NowPlayingScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          // Shuffle avec indicateur point vert
                           Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [

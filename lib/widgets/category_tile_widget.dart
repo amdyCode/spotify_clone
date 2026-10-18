@@ -45,7 +45,6 @@ class CategoryTileWidget extends StatelessWidget {
                 ),
               ),
             ),
-            // Image inclinée à 25 degrés qui dépasse en bas à droite
             Positioned(
               right: -12,
               bottom: -6,

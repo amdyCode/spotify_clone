@@ -105,7 +105,7 @@ class SearchScreenController extends GetxController {
     isSearching.value = true;
     final List<Track> combinedResults = [];
 
-    // 1. Filtrer les titres locaux
+    // Filtrer les titres locaux
     try {
       final catalogController = Get.find<CatalogController>();
       final localMatches = catalogController.tracks.where((t) =>

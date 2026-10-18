@@ -38,18 +38,19 @@ class HomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 16.0,
               children: [
-                // 1. En-tête : Avatar profil "A" + Filtres en pilules ("Tout", "Musique", "Podcasts")
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16.0,
+                    vertical: 8.0,
+                  ),
                   child: Row(
                     spacing: 8.0,
                     children: [
-                      // Avatar "A"
                       Container(
                         width: 34,
                         height: 34,
                         decoration: const BoxDecoration(
-                          color: Color(0xFF8D4A32),
+                          color: AppColors.spotifyGreen,
                           shape: BoxShape.circle,
                         ),
                         alignment: Alignment.center,
@@ -69,16 +70,23 @@ class HomeScreen extends StatelessWidget {
                           onTap: () => catalog.setFilter(f),
                           child: AnimatedContainer(
                             duration: const Duration(milliseconds: 200),
-                            padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 8.0),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 14.0,
+                              vertical: 8.0,
+                            ),
                             decoration: BoxDecoration(
-                              color: isSelected ? AppColors.chipActive : AppColors.chipInactive,
+                              color: isSelected
+                                  ? AppColors.chipActive
+                                  : AppColors.chipInactive,
                               borderRadius: BorderRadius.circular(20.0),
                             ),
                             child: Text(
                               f,
                               style: TextStyle(
                                 color: isSelected ? Colors.black : Colors.white,
-                                fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
+                                fontWeight: isSelected
+                                    ? FontWeight.w700
+                                    : FontWeight.w500,
                                 fontSize: 13,
                               ),
                             ),
@@ -89,7 +97,6 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
 
-                // 2. Bannière raccourci : "Mix Ninho"
                 if (quickMix != null)
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -129,7 +136,11 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           IconButton(
-                            icon: const Icon(Icons.more_horiz, color: AppColors.spotifyGreen, size: 22),
+                            icon: const Icon(
+                              Icons.more_horiz,
+                              color: AppColors.spotifyGreen,
+                              size: 22,
+                            ),
                             onPressed: () {},
                           ),
                         ],
@@ -137,7 +148,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
 
-                // 3. Section "Lancer la lecture" avec sous-titre
+                // Section "Lancer la lecture" avec sous-titre
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: Column(
@@ -165,14 +176,13 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
 
-                // Liste verticale des 5 titres
                 Column(
                   children: tracks.map((track) {
                     return TrackTileWidget(track: track);
                   }).toList(),
                 ),
 
-                // 4. Section "Pour commencer"
+                // Section "Pour commencer"
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.0),
                   child: Text(
@@ -202,7 +212,9 @@ class HomeScreen extends StatelessWidget {
                           // Joue le premier titre associé au mix
                           if (tracks.isNotEmpty) {
                             final target = tracks.firstWhere(
-                              (t) => t.artist.toLowerCase().contains(mix.title.toLowerCase().replaceAll('mix ', '')),
+                              (t) => t.artist.toLowerCase().contains(
+                                mix.title.toLowerCase().replaceAll('mix ', ''),
+                              ),
                               orElse: () => tracks.first,
                             );
                             player.playTrack(target);
@@ -213,7 +225,6 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
 
-                // 5. Section "Popular artists" (conforme à la capture de l'utilisateur)
                 if (artists.isNotEmpty) ...[
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16.0),
@@ -241,7 +252,9 @@ class HomeScreen extends StatelessWidget {
                           onTap: () {
                             if (tracks.isNotEmpty) {
                               final matched = tracks.firstWhere(
-                                (t) => t.artist.toLowerCase().contains(artist.name.toLowerCase()),
+                                (t) => t.artist.toLowerCase().contains(
+                                  artist.name.toLowerCase(),
+                                ),
                                 orElse: () => tracks.first,
                               );
                               player.playTrack(matched);

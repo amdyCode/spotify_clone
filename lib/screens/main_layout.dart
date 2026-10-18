@@ -37,24 +37,12 @@ class MainLayout extends StatelessWidget {
           // Écran courant
           Obx(() => screens[layoutController.selectedIndex.value]),
 
-          // Overlay inférieur : Dégradé + Mini-Lecteur + Barre 5 onglets
           Positioned(
             left: 0,
             right: 0,
             bottom: 0,
             child: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Colors.transparent,
-                    AppColors.background.withValues(alpha: 0.85),
-                    AppColors.background,
-                  ],
-                  stops: const [0.0, 0.4, 0.8],
-                ),
-              ),
+              color: AppColors.background,
               child: SafeArea(
                 top: false,
                 child: Column(

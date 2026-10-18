@@ -102,17 +102,18 @@
       "durationMs": 157000,
       "explicit": true,
       "color": "#301216",
-      "quoteLyric": "Ne viens pas gâcher nos projets, j'ai pas qu'ça à faire de ma vie, compris (oui, oui)",
+      "quoteLyric": "Oh mi amor, c'est que nous deux, fuck le reste (fuck)",
       "lyrics": [
-        "À deux, c'est mieux qu'en solo, j'crois bien qu'j'ai trouvé ma go",
-        "Elle a ce truc en plus qui me rend parano",
-        "Ne viens pas gâcher nos projets, j'ai pas qu'ça à faire de ma vie, compris (oui, oui)",
-        "Et si c'est pour toujours, j'veux bien qu'on s'associe",
-        "Et si c'est pour toujours, j'veux bien qu'on s'associe",
-        "J'ai pas l'temps d'jouer la comédie",
-        "J'sais qu't'as peur que j'm'en aille, j'suis un homme de la street",
-        "Mais pour toi j'peux changer d'avis",
-        "Mais pour toi j'peux changer d'avis"
+        "dans le Classe S",
+        "Oh mi amor, c'est que nous deux, fuck le reste (fuck)",
+        "C'est toi la best (ouais), en classe affaire, ici, c'est trop la guerre",
+        "À toi mon bébé, à toi ma future femme",
+        "Y aura des trucs à respecter si tu veux qu'on y aille",
+        "Jusqu'au bout, je sais qu't'as kiffé, j'le vois dans ton sourire (ton sourire)",
+        "J'te f'rais plus jamais souffrir",
+        "Et tes copines disent que c'est mort un avenir avec NI (avec NI)",
+        "Mais c'est p't-être William qui veut construire une famille",
+        "Une putain d'vie d'artiste, une putain d'vie de OG (une putain d'vie de OG)"
       ]
     },
     {
@@ -135,23 +136,30 @@
       ]
     },
     {
-      "id": "576851222",
-      "title": "Djadja",
-      "artist": "Aya Nakamura",
-      "album": "NAKAMURA",
-      "cover": "https://cdn-images.dzcdn.net/images/cover/41fc3e7a3430f3a5e1c1780b57c3147f/1000x1000-000000-80-0-0.jpg",
-      "deezerId": 576851222,
+      "id": "132123632",
+      "title": "Jusqu'au dernier gramme",
+      "artist": "PNL",
+      "album": "Dans la légende",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/3722b6f876813ecf4bdf75443bf02da1/1000x1000-000000-80-0-0.jpg",
+      "deezerId": 132123632,
       "previewUrl": "",
-      "durationMs": 171000,
-      "explicit": false,
-      "color": "#5A1E32",
-      "quoteLyric": "Hello papi mais qué pasa? J'entends des bails sur moi, y a pas moyen Djadja",
+      "startOffsetSeconds": 0,
+      "durationMs": 352000,
+      "explicit": true,
+      "color": "#093845",
+      "quoteLyric": "Le monde, j'le vois de travers, j'le monte (j'le monte en l'air)",
       "lyrics": [
-        "Hello papi mais qué pasa?",
-        "J'entends des bails sur moi",
-        "Y a pas moyen Djadja",
-        "J'suis pas ta catin Djadja",
-        "Genre en catchana baby tu dead ça"
+        "Le monde, j'le vois de travers, j'le monte (j'le monte en l'air)",
+        "En l'air, en l'air jusqu'à (jusqu'à)",
+        "Ce que c'putain de bonheur se montre (bah ouais)",
+        "Y'a pas de de cinéma, j'ai pas de temps",
+        "Pas de temps à donner ou à perdre",
+        "Baba m'a dit faut du douze, faut scier l'canon pour la guerre",
+        "Et la guerre on l'a fait, on la refera, pourquoi donc épiloguer",
+        "Pas de paix, pas de paix, pas de paix dans le contrat",
+        "La haine pour co-piloter",
+        "Il s'agit de n'plus jouer au con",
+        "Dans l'regard paraît qu'on y voit une âme"
       ]
     }
   ]

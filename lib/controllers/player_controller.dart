@@ -151,6 +151,18 @@ class PlayerController extends GetxController {
     }
   }
 
+  void stopPlayer() {
+    try {
+      _player.pause();
+      _player.stop();
+    } catch (e) {
+      debugPrint('Erreur stopPlayer: $e');
+    }
+    isPlaying.value = false;
+    currentTrack.value = null;
+    position.value = Duration.zero;
+  }
+
   Future<void> toggleLike(String trackId, [Track? explicitTrack]) async {
     if (likedTrackIds.contains(trackId)) {
       likedTrackIds.remove(trackId);
