@@ -8,6 +8,7 @@ import '../controllers/player_controller.dart';
 import '../models/track.dart';
 import '../utils/context_extensions.dart';
 import '../widgets/lyrics_preview_widget.dart';
+import 'lyrics_screen.dart';
 
 class NowPlayingScreen extends StatelessWidget {
   const NowPlayingScreen({super.key});
@@ -25,6 +26,14 @@ class NowPlayingScreen extends StatelessWidget {
     final minutes = duration.inMinutes;
     final seconds = duration.inSeconds % 60;
     return '$minutes:${seconds.toString().padLeft(2, '0')}';
+  }
+
+  int _calculateActiveIndex(Duration position, Duration total, int lyricsCount) {
+    if (lyricsCount == 0) return 0;
+    final totalMs = total.inMilliseconds > 0 ? total.inMilliseconds : 30000;
+    final lineDurationMs = totalMs / lyricsCount;
+    final index = (position.inMilliseconds / lineDurationMs).floor();
+    return index.clamp(0, lyricsCount - 1);
   }
 
   @override
@@ -174,19 +183,70 @@ class NowPlayingScreen extends StatelessWidget {
                       ),
                     ),
 
-                    if (track.quoteLyric != null && track.quoteLyric!.isNotEmpty)
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 10.0),
-                        child: Text(
-                          track.quoteLyric!,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            height: 1.3,
+                    // Paroles synchronisées
+                    Builder(
+                      builder: (context) {
+                        final lyrics = track.lyrics;
+                        final String currentLyric;
+                        if (lyrics.isNotEmpty) {
+                          final activeIndex = _calculateActiveIndex(
+                            player.position.value,
+                            player.duration.value,
+                            lyrics.length,
+                          );
+                          currentLyric = lyrics[activeIndex];
+                        } else if (track.quoteLyric != null && track.quoteLyric!.isNotEmpty) {
+                          currentLyric = track.quoteLyric!;
+                        } else {
+                          currentLyric = '';
+                        }
+
+                        if (currentLyric.isEmpty) return const SizedBox.shrink();
+
+                        return GestureDetector(
+                          onTap: () {
+                            Get.to(
+                              () => LyricsScreen(track: track),
+                              transition: Transition.downToUp,
+                              duration: const Duration(milliseconds: 300),
+                            );
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 10.0),
+                            child: AnimatedSwitcher(
+                              duration: const Duration(milliseconds: 300),
+                              transitionBuilder: (child, animation) {
+                                return FadeTransition(
+                                  opacity: animation,
+                                  child: SlideTransition(
+                                    position: Tween<Offset>(
+                                      begin: const Offset(0.0, 0.2),
+                                      end: Offset.zero,
+                                    ).animate(animation),
+                                    child: child,
+                                  ),
+                                );
+                              },
+                              child: SizedBox(
+                                key: ValueKey<String>(currentLyric),
+                                width: double.infinity,
+                                child: Text(
+                                  currentLyric,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                    height: 1.3,
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
+                        );
+                      },
+                    ),
 
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0),
