@@ -8,7 +8,7 @@ Un clone mobile haute fidélité de Spotify développé avec **Flutter** et **Ge
 
 | Accueil | Recherche | Grand Lecteur | Paroles Synchronisées |
 | :---: | :---: | :---: | :---: |
-| ![Accueil](screenshots/home.png) | ![Recherche](screenshots/search.png) | ![Grand Lecteur](screenshots/player.png) | ![Paroles](screenshots/lyrics.png) |
+| ![image alt](https://github.com/amdyCode/spotify_clone/blob/57fbaf71736a24f40d52bcce7072b727ee131a56/assets/images/image1.png) | ![image alt](https://github.com/amdyCode/spotify_clone/blob/57fbaf71736a24f40d52bcce7072b727ee131a56/assets/images/image2.png) | ![image alt](https://github.com/amdyCode/spotify_clone/blob/57fbaf71736a24f40d52bcce7072b727ee131a56/assets/images/image3.png) | ![image alt](https://github.com/amdyCode/spotify_clone/blob/57fbaf71736a24f40d52bcce7072b727ee131a56/assets/images/image4.png) |
 
 ---
 
